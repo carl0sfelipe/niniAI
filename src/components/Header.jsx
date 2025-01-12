@@ -1,19 +1,24 @@
 import React from 'react';
-import { Terminal } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import dexScreenerLogo from '../assets/dexscreener.png';
 import telegramLogo from '../assets/telegram.png';
 import twitterLogo from '../assets/twitter.png';
+import niniLogo from '../assets/nini.jpg';
 
 const Header = ({ dexscreamLink, telegramLink, twitterLink }) => {
   return (
     <header className="relative z-10 p-6 bg-black/40 backdrop-blur-lg border-b border-blue-500/20">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <h1 className="text-2xl font-bold flex items-center gap-2 group">
-          <Terminal className="w-6 h-6 text-blue-400 group-hover:text-blue-300 transition-colors duration-300" />
-          <span className="bg-gradient-to-r from-blue-400 to-purple-400 text-transparent bg-clip-text">
+        <Link to="/" className="flex items-center gap-2 group">
+          <img 
+            src={niniLogo} 
+            alt="Nini AI" 
+            className="w-8 h-8 rounded-full object-cover transition-transform duration-300 group-hover:scale-110"
+          />
+          <span className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 text-transparent bg-clip-text">
             NiniAI Trading Bot
           </span>
-        </h1>
+        </Link>
         <nav className="flex space-x-6">
           <a
             href={dexscreamLink}
