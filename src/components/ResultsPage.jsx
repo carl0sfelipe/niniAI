@@ -5,11 +5,6 @@ import CTASection from './CTASection';
 import Footer from './Footer';
 
 const ResultsPage = () => {
-  const contractAddress = 'C9YVUuRuKSCBFghoF8gno9GZ7YuCpzGWiXTts7Q7pump';
-  const dexscreamLink = 'https://dexscreener.com/solana/C9YVUuRuKSCBFghoF8gno9GZ7YuCpzGWiXTts7Q7pump';
-  const telegramLink = 'https://t.me/niniai_portal';
-  const twitterLink = 'https://x.com/NiniAiTrading';
-
   const parseResults = (data) => {
     return data.split('\n').filter(Boolean).map(line => {
       const [action, coin, price, profitStr, aiType, datetime] = line.split(';');
@@ -34,12 +29,7 @@ const ResultsPage = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-black text-white">
-      <Header 
-        dexscreamLink={dexscreamLink}
-        telegramLink={telegramLink}
-        twitterLink={twitterLink}
-      />
-
+      <Header />
       <main className="flex-1 py-16 px-4">
         <div className="max-w-6xl mx-auto">
           <h1 className="text-4xl font-bold text-center mb-12">
@@ -115,10 +105,7 @@ const ResultsPage = () => {
         </div>
       </main>
 
-      <CTASection 
-        contractAddress={contractAddress}
-        dexscreamLink={dexscreamLink}
-      />
+      <CTASection />
       <Footer />
     </div>
   );

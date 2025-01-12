@@ -1,54 +1,61 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import niniLogo from '../assets/nini.jpg';
 import dexScreenerLogo from '../assets/dexscreener.png';
 import telegramLogo from '../assets/telegram.png';
 import twitterLogo from '../assets/twitter.png';
-import niniLogo from '../assets/nini.jpg';
+import { Menu, X } from 'lucide-react';
 
-const Header = ({ dexscreamLink, telegramLink, twitterLink }) => {
+const Header = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
     <header className="relative z-10 p-6 bg-black/40 backdrop-blur-lg border-b border-blue-500/20">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2 group">
+        <Link to="/" className="flex items-center gap-2">
           <img 
             src={niniLogo} 
             alt="Nini AI" 
-            className="w-8 h-8 rounded-full object-cover transition-transform duration-300 group-hover:scale-110"
+            className="w-8 h-8 rounded-full object-cover"
           />
           <span className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 text-transparent bg-clip-text">
-            NiniAI Trading Bot
+            NiniAI
           </span>
         </Link>
-        <nav className="flex space-x-6">
+        <button onClick={toggleMenu} className="text-white md:hidden">
+          {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+        </button>
+        <nav className={`flex-col md:flex-row md:flex ${menuOpen ? 'flex' : 'hidden'} space-y-4 md:space-y-0 md:space-x-6 mt-4 md:mt-0`}>
           <a
-            href={dexscreamLink}
+            href='https://dexscreener.com/solana/C9YVUuRuKSCBFghoF8gno9GZ7YuCpzGWiXTts7Q7pump'
             target="_blank"
             rel="noopener noreferrer"
-            className="relative group py-2 flex items-center gap-1"
+            className="flex items-center text-blue-400 hover:text-blue-300 transition-colors duration-300"
           >
-            <img src={dexScreenerLogo} alt="Dexscreener" className="w-4 h-4 inline" />
-            <span className="text-blue-400 hover:text-blue-300 transition-colors duration-300">Dexscreener</span>
-            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300 group-hover:w-full"></span>
+            <img src={dexScreenerLogo} alt="Dexscreener" className="w-4 h-4 mr-1" />
+            Dex Screener
           </a>
           <a
-            href={telegramLink}
+            href='https://t.me/niniai_portal'
             target="_blank"
             rel="noopener noreferrer"
-            className="relative group py-2 flex items-center gap-1"
+            className="flex items-center text-blue-400 hover:text-blue-300 transition-colors duration-300"
           >
-            <img src={telegramLogo} alt="Telegram" className="w-4 h-4 inline" />
-            <span className="text-blue-400 hover:text-blue-300 transition-colors duration-300">Telegram</span>
-            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300 group-hover:w-full"></span>
+            <img src={telegramLogo} alt="Telegram" className="w-4 h-4 mr-1" />
+            Telegram
           </a>
           <a
-            href={twitterLink}
+            href='https://x.com/NiniAiTrading'
             target="_blank"
             rel="noopener noreferrer"
-            className="relative group py-2 flex items-center gap-1"
+            className="flex items-center text-blue-400 hover:text-blue-300 transition-colors duration-300"
           >
-            <img src={twitterLogo} alt="Twitter" className="w-4 h-4 inline" />
-            <span className="text-blue-400 hover:text-blue-300 transition-colors duration-300">X</span>
-            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300 group-hover:w-full"></span>
+            <img src={twitterLogo} alt="Twitter" className="w-4 h-4 mr-1" />
+            X
           </a>
         </nav>
       </div>
