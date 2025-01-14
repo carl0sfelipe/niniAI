@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { FaClipboard } from 'react-icons/fa';
 
 const CTASection = () => {
   const [copied, setCopied] = useState(false);
@@ -17,13 +18,18 @@ const CTASection = () => {
           Start Trading with NiniAI
         </h3>
         <div 
-          className="mb-4 md:mb-8 p-3 bg-black/40 backdrop-blur-xl rounded-lg border border-blue-500/20 inline-block cursor-copy"
+          className="mb-4 md:mb-8 p-3 bg-black/40 backdrop-blur-xl rounded-lg border border-blue-500/20 inline-block cursor-copy max-w-full relative"
           onClick={handleCopyToClipboard}
         >
-          <span className="font-semibold text-blue-400">Contract Address: </span>
-          <code className="bg-black/60 text-blue-300 px-2 py-1 rounded text-sm md:text-base">
+          <span className="font-semibold text-blue-400 text-sm md:text-base">Contract Address: </span>
+          <br />
+          <code className="bg-black/60 text-blue-300 px-2 py-1 rounded text-[10px] sm:text-xs md:text-base break-all">
             {contractAddress}
           </code>
+          <div className="absolute top-1 right-1 flex items-center">
+            <FaClipboard className="text-blue-400 text-lg" />
+            <span className="ml-1 text-xs text-gray-300">Click to Copy</span>
+          </div>
         </div>
         {copied && (
           <div className="text-green-400 mb-4 text-sm">
