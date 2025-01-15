@@ -31,7 +31,7 @@ const Footer = () => {
           className="text-blue-400 hover:text-blue-300"
         >
           {' '}Telegram group
-        </a>, and if you’d like to support, feel free to send donations to
+        </a>, and if you’d like to support, feel free to send donations
         <br />
         <span 
           className="text-blue-400 cursor-copy hover:text-blue-300 text-sm md:text-base"

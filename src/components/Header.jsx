@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import niniLogo from '../assets/nini.jpg';
+import niniLogo from '../../public/nini.svg';
 import dexScreenerLogo from '../assets/dexscreener.png';
 import telegramLogo from '../assets/telegram.png';
 import twitterLogo from '../assets/twitter.png';
+import niniWhiteLogo from '../../public/nini-white.svg';
 import { Menu, X } from 'lucide-react';
 
 const Header = () => {
@@ -18,9 +19,9 @@ const Header = () => {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2">
           <img 
-            src={niniLogo} 
-            alt="Nini AI" 
-            className="w-8 h-8 rounded-full object-cover"
+            src={niniWhiteLogo}
+            alt="Nini AI White Logo" 
+            className="w-8 h-8 object-cover"
           />
           <span className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 text-transparent bg-clip-text">
             NiniAI

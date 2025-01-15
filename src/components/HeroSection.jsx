@@ -3,7 +3,7 @@ import { Code } from 'lucide-react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import niniLogo from '../assets/nini.jpg';
+import niniLogo from '../assets/nini.webp';
 import telegramLogo from '../assets/telegram.png';
 
 const HeroSection = ({ isVisible }) => {
@@ -29,7 +29,7 @@ const HeroSection = ({ isVisible }) => {
               <img 
                 src={niniLogo} 
                 alt="Nini AI Logo" 
-                className="w-24 h-24 mx-auto rounded-full object-cover mb-8"
+                className="w-64 h-64 mx-auto rounded-full object-cover mb-8"
               />
               <h2 className="text-5xl font-extrabold mb-6">
                 <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-blue-400 text-transparent bg-clip-text">
