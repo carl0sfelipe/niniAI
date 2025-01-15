@@ -83,6 +83,29 @@ You can deploy the `dist` folder to any static hosting service. Here are some po
    npm run deploy
    ```
 
+### 1&1 IONOS Hosting
+
+1. **Build the Project**: Ensure your project is built for production.
+
+   ```bash
+   npm run build
+   ```
+
+2. **Upload Files**: Use an FTP client (like FileZilla) to upload the contents of the `dist` folder to the root directory of your 1&1 IONOS hosting space.
+
+3. **Configure .htaccess**: If your application uses client-side routing, you may need to create a `.htaccess` file in the root directory to handle routing correctly. Add the following content to the `.htaccess` file:
+
+   ```apache
+   RewriteEngine On
+   RewriteBase /
+   RewriteRule ^index\.html$ - [L]
+   RewriteCond %{REQUEST_FILENAME} !-f
+   RewriteCond %{REQUEST_FILENAME} !-d
+   RewriteRule . /index.html [L]
+   ```
+
+4. **Access Your Site**: Once the files are uploaded, your site should be accessible via your domain.
+
 ## Tech Stack
 
 - [React](https://reactjs.org/) - UI Library
