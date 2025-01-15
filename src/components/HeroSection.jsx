@@ -12,7 +12,7 @@ const HeroSection = ({ isVisible }) => {
     infinite: true,
     speed: 500,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 5000,
     slidesToShow: 1,
     slidesToScroll: 1,
     fade: true,
@@ -92,6 +92,9 @@ const HeroSection = ({ isVisible }) => {
                     <span className="text-blue-400 font-bold">Real-time </span>
                     Trading Signals
                   </span>
+                  <span className="block">
+                    <span className="text-white"> Advanced AI </span> <span className="text-purple-400 font-bold"> Trading Opportunities</span>
+                  </span>
                 </span>
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
@@ -126,12 +129,14 @@ const HeroSection = ({ isVisible }) => {
                 Hold 5M+ NiniAI tokens to access our advanced trading bot:
                 <span className="block mt-4 space-y-2">
                   <span className="block">
-                    <span className="text-blue-400 font-bold">Direct </span>
-                    Binance API Integration
+                    <span className="text-white">Direct </span>
+                    <span className="text-purple-400 font-bold">Binance API Integration</span>
                   </span>
-                  <span className="block">
-                    <span className="text-purple-400 font-bold">Automated </span>
-                    Trading System with 10x Leverage
+                  <span className="block"></span>
+                    <span className="text-white">Let your Trading on the</span> <span className="text-purple-400 font-bold">Auto Pilot </span>
+                    
+                    <span className="block">
+                    <span className="text-purple-400 font-bold">Easy</span> to Use Documentation
                   </span>
                 </span>
               </p>
