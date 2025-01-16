@@ -6,6 +6,8 @@ import telegramLogo from '../assets/telegram.png';
 import twitterLogo from '../assets/twitter.png';
 import niniWhiteLogo from '../../public/nini-white.svg';
 import { Menu, X } from 'lucide-react';
+import instagramLogo from '../assets/ig.png';
+import facebookLogo from '../assets/fb.png';
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -57,6 +59,24 @@ const Header = () => {
           >
             <img src={twitterLogo} alt="Twitter" className="w-4 h-4 mr-1" />
             X
+          </a>
+          <a
+            href='https://www.instagram.com/niniai.io/'
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center text-blue-400 hover:text-blue-300 transition-colors duration-300"
+          >
+            <img src={instagramLogo} alt="Instagram" className="w-4 h-4 mr-1" />
+            Instagram
+          </a>
+          <a
+            href='https://www.facebook.com/groups/905500658397162/'
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center text-blue-400 hover:text-blue-300 transition-colors duration-300"
+          >
+            <img src={facebookLogo} alt="Facebook" className="w-4 h-4 mr-1" />
+            Facebook
           </a>
         </nav>
       </div>

@@ -22,28 +22,6 @@ const Footer = () => {
         >
           {' '}@carl0sfelipe
         </a>
-        <br />
-        Your feedback is welcome on our 
-        <a 
-          href="https://t.me/niniai_portal" 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          className="text-blue-400 hover:text-blue-300"
-        >
-          {' '}Telegram group
-        </a>, and if you’d like to support, feel free to send donations
-        <br />
-        <span 
-          className="text-blue-400 cursor-copy hover:text-blue-300 text-sm md:text-base"
-          onClick={handleCopyToClipboard}
-        >
-          {' '}{donationAddress}
-        </span>
-        {copied && (
-          <div className="text-green-400">
-            Address copied to clipboard!
-          </div>
-        )}
       </div>
     </footer>
   );
