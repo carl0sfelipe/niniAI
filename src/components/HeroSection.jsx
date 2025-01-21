@@ -8,7 +8,7 @@ import telegramLogo from '../assets/telegram.png';
 
 const HeroSection = ({ isVisible }) => {
   const monthsSinceStart = useMemo(() => {
-    const startDate = new Date('2023-10-01');
+    const startDate = new Date('2024-10-01');
     const currentDate = new Date();
     const monthDiff = (currentDate.getFullYear() - startDate.getFullYear()) * 12 + 
       (currentDate.getMonth() - startDate.getMonth());
