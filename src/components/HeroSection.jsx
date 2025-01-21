@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import { Code } from 'lucide-react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
@@ -7,6 +7,14 @@ import niniLogo from '../assets/nini.webp';
 import telegramLogo from '../assets/telegram.png';
 
 const HeroSection = ({ isVisible }) => {
+  const monthsSinceStart = useMemo(() => {
+    const startDate = new Date('2023-10-01');
+    const currentDate = new Date();
+    const monthDiff = (currentDate.getFullYear() - startDate.getFullYear()) * 12 + 
+      (currentDate.getMonth() - startDate.getMonth());
+    return monthDiff;
+  }, []);
+
   const settings = {
     dots: true,
     infinite: true,
@@ -44,11 +52,11 @@ const HeroSection = ({ isVisible }) => {
                     Success Rate
                   </span>
                   <span className="block">
-                    <span className="text-purple-400 font-bold">580% </span>
-                    ROI in 3 Months
+                    <span className="text-purple-400 font-bold">748% </span>
+                    ROI in {monthsSinceStart} Months
                   </span>
                   <span className="block">
-                    <span className="text-blue-400 font-bold">10,000+ </span>
+                    <span className="text-blue-400 font-bold">11,000+ </span>
                     Successful Trades
                   </span>
                 </span>
