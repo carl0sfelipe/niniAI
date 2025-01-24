@@ -73,7 +73,7 @@ const TreasuryDisclosure = () => {
       </h2>
 
       <WalletCard 
-        title="Dev Wallet"
+        title="Marketing Wallet"
         address={MARKETING_WALLET}
         shortAddress="FRnH5sLWJTb...H7h1aW"
         description="Allocation: Partnerships, KOLs & Exchange listings"
