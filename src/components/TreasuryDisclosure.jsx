@@ -1,5 +1,30 @@
 import { useState } from 'react'
-import { ChevronDownIcon, ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline'
+
+const ChevronIcon = ({ className }) => (
+  <svg 
+    className={className} 
+    xmlns="http://www.w3.org/2000/svg" 
+    fill="none" 
+    viewBox="0 0 24 24" 
+    strokeWidth={1.5} 
+    stroke="currentColor"
+  >
+    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+  </svg>
+)
+
+const ExternalLinkIcon = ({ className }) => (
+  <svg 
+    className={className} 
+    xmlns="http://www.w3.org/2000/svg" 
+    fill="none" 
+    viewBox="0 0 24 24" 
+    strokeWidth={1.5} 
+    stroke="currentColor"
+  >
+    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+  </svg>
+)
 
 const WalletCard = ({ title, address, description, shortAddress }) => {
   const [isOpen, setIsOpen] = useState(false)
@@ -14,7 +39,7 @@ const WalletCard = ({ title, address, description, shortAddress }) => {
           <h3 className="font-semibold text-white">{title}</h3>
           <p className="text-sm text-gray-400 mt-1">{shortAddress}</p>
         </div>
-        <ChevronDownIcon className={`w-5 h-5 text-gray-400 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
+        <ChevronIcon className={`w-5 h-5 text-gray-400 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
       </button>
 
       {isOpen && (
@@ -28,7 +53,7 @@ const WalletCard = ({ title, address, description, shortAddress }) => {
               className="flex items-center gap-2 bg-[#1a1b1e] text-blue-400 hover:text-blue-300 px-4 py-3 rounded-lg border border-blue-500/20 transition-colors"
             >
               <span>View on Solscan</span>
-              <ArrowTopRightOnSquareIcon className="w-4 h-4" />
+              <ExternalLinkIcon className="w-4 h-4" />
             </a>
           </div>
         </div>
