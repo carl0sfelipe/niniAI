@@ -1,6 +1,6 @@
 import ReactGA from "react-ga4";
 
-// ID correto do Google Analytics
+// Confirme que este ID é o mesmo mostrado no Google Analytics
 const MEASUREMENT_ID = "G-TJ24XCF9SK"; 
 
 export const initGA = () => {
